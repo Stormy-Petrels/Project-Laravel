@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->increments('id')->unique()->primary();
+            $table->string('id', 200)->unique()->primary();
             $table->string('user_id', 200)->notNull();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('patient_id', 200)->notNull();
             $table->string('doctor_id', 200)->notNull();
             $table->date('date_booking')->notNull();
-            $table->unsignedBigInteger('time_id')->notNull();
+            $table->string('time_id')->notNull();
             $table->foreign('time_id')->references('id')->on('list_time_doctor');
             $table->foreign('patient_id')->references('id')->on('patients');
             $table->foreign('doctor_id')->references('id')->on('doctors');

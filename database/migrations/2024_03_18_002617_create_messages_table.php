@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('messages', function (Blueprint $table) {
-            $table->increments('id')->unique()->primary();
+            $table->string('id', 200)->unique()->primary();
             $table->string('sender_id', 200)->notNull();
             $table->string('receiver_id', 200)->notNull();
             $table->string('message_type', 200)->notNull();
